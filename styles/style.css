@@ -1,7 +1,7 @@
 .photoSizer{
     display: flex;
     flex-direction: row;
-    width: 200px;
+    width: 150px;
 }
 
 body {
