@@ -1,8 +1,7 @@
-#photoSizer{
-    padding-left: 300px;
+.photoSizer{
     display: flex;
     flex-direction: row;
-    size: 10px;
+    width: 200px;
 }
 
 body {
