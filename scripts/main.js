@@ -5,9 +5,9 @@ class Cyberpet {
         this.thirst = 50;
     }
     updateUI() {
-        document.querySelector(".hunger").textContent = this.hunger;
-        document.querySelector(".thirst").textContent = this.thirst;
-        document.querySelector(".happiness").textContent = this.happiness;
+        document.querySelector(".hunger").style.width = `${this.hunger}px`
+        document.querySelector(".thirst").style.width = `${this.thirst}px`
+        document.querySelector(".happiness").style.width = `${this.happiness}px`
         document.querySelector(".pet").style.height = `${this.happiness}px`;
         document.querySelector(".pet").style.width = `${this.happiness}px`;
     }

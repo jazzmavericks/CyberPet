@@ -37,3 +37,30 @@ button {
     color: white;
     cursor: pointer;
 }
+
+.happiness {
+    width: 100px;
+    height: 20px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hunger {
+    width: 100px;
+    height: 20px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thirst {
+    width: 100px;
+    height: 20px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
