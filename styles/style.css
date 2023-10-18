@@ -1,3 +1,10 @@
+#photoSizer{
+    padding-left: 300px;
+    display: flex;
+    flex-direction: row;
+    size: 10px;
+}
+
 body {
     display:flex;
     flex-direction: column;
