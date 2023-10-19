@@ -79,9 +79,9 @@ function showSpecificAttribute(attributeName, attributeValue) {
 
     const attributeSpecificContainer = document.querySelector(".attribute-specific");
     attributeSpecificContainer.innerHTML = `
-        <p>${formattedAttributeName}: </p>
+        <p>${formattedAttributeName}:</p>
         <div class="${attributeName}-bar">
-            <div class="${attributeName}">${attributeValue}</div>
+            <div class="${attributeName}"></div>
         </div>
     `;
 }
