@@ -7,52 +7,68 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-<!-- choose your pet page -->
+<!-- choose your pet section -->
 <section>
     <div>
         <h1 class="bigtext1">Choose your pet!</h1>
         <h3 class="bigsmalltxt1">Make sure to nurture your pet and fufil its needs or your pet will die!</h3>
-        <div class="actions">
-        <img class="photoSizer" src="./images/wookie.webp" alt="wookie image">
-        <img class="photoSizer" src="./images/Porg-10.webp" alt="porg image">
-        <img class="photoSizer" src="./images/ewok.jpeg" alt="ewok image">
-        <img class="photoSizer" src="./images/rancor.webp" alt="rancor image">
+        <div class="pet-selection">
+            <img class="pet-image" data-pet-type="Wookie" src="https://www.giantfreakinrobot.com/wp-content/uploads/2023/03/black-krrsantan-star-wars-book-of-boba-fett.jpg" alt="wookie image">
+            <img class="pet-image" data-pet-type="Porg" src="https://lumiere-a.akamaihd.net/v1/images/porg-main_16933d3b.jpeg?region=0%2C0%2C1560%2C878" alt="porg image">
+            <img class="pet-image" data-pet-type="Ewok" src="https://lumiere-a.akamaihd.net/v1/images/image_b392ae11.jpeg?region=23%2C0%2C1628%2C814" alt="ewok image">
+            <img class="pet-image" data-pet-type="Rancor" src="https://lumiere-a.akamaihd.net/v1/images/rancor-main_886815df.jpeg?region=211%2C0%2C953%2C536" alt="rancor image">
     </div>
-    <div class="actions">
-        <button class="wookieBtn">select wookie</button>
-        <button class="porgBtn">select porg</button>
-        <button class="ewokBtn">select ewok</button>
-        <button class="rancorBtn">select rancor</button>
-    </div>
-    </div>
-</section>
-<!-- choose pet end -->
-<!-- pet game page -->
-    <div class="pet-container">
-        <div class="pet"></div>
-    </div>
-    <div class="actions">
-        <form action="">
-            <label for="pet">Name Your Pet:</label>
-            <input type="text" id="petName" name="gary" value="">
-            <button>name</button>
-          </form>
-          <section class="action">
-        <button class="eat-btn">Eat</button>
-        <button class="drink-btn">Drink</button>
-        <button class="play-btn">Play</button>
-    </div>
-        </section>
-    <div class=""stats>
-<h2>Pet stats:</h2>
-<p>Happiness: <span class="happiness">50</span></p>
-<p>Hunger: <span class="hunger">50</span></p>
-<p>Thirst: <span class="thirst">50</span></p>
-    </div>
-    <!-- pet game page end -->
-
-    <!-- script -->
-    <script src = "./scripts/main.js"></script>
-    <!-- script end -->
-</body>
-</html>
+    <div class="game-interface" style="display: none;">
+    
+<!-- Switches to game section -->
+        <div class="pet-container">
+            <div class="pet">
+                <!-- Pet image goes here -->
+            </div>
+            <div class="status">
+                <div class="attribute">
+                    <p>Hunger: </p>
+                    <div class="hunger-bar">
+                        <div class="hunger"></div>
+                    </div>
+                </div>
+                <div class="attribute">
+                    <p>Thirst: </p>
+                    <div class="thirst-bar">
+                        <div class="thirst"></div>
+                    </div>
+                </div>
+                <div class="attribute">
+                    <p>Happiness: </p>
+                    <div class="happiness-bar">
+                        <div class="happiness"></div>
+                    </div>
+                </div>
+                <div class="attribute-specific">
+                    <p>Squawk Level: </p>
+                    <div class="squawkLevel-bar">
+                        <div class="squawkLevel"></div>
+                    </div>
+                    <p>Cuddly Level: </p>
+                    <div class="cuddlyLevel-bar">
+                        <div class="cuddlyLevel"></div>
+                    </div>
+                    <p>Roar Level: </p>
+                    <div class="roarLevel-bar">
+                        <div class="roarLevel"></div>
+                    </div>
+                    <p>Chuckle Level: </p>
+                    <div class="chuckleLevel-bar">
+                        <div class="chuckleLevel"></div>
+                    </div>
+                </div>           
+            </div>
+            <div class="actions">
+                <button class="eat-btn">Eat</button>
+                <button class="drink-btn">Drink</button>
+                <button class="play-btn">Play</button>
+            </div>
+        </div>
+        <script src="scripts/main.js"></script>
+    </body>
+    </html>
