@@ -8,10 +8,10 @@ const squawkBtn = document.querySelector(".squawk-btn");
 const drumBtn = document.querySelector(".drum-btn");
 const chuckleBtn = document.querySelector(".chuckle-btn");
 
-petImages.forEach(image => {
-    image.addEventListener("click", () => {
-        const petType = image.getAttribute("data-pet-type");
-        let selectedPet;
+petImages.forEach(image => {    
+    image.addEventListener("click", () => {        
+    const petType = image.getAttribute("data-pet-type");        
+    let selectedPet;
 
         // Create the selected pet instance based on the chosen type
         if (petType === "Wookie") {
@@ -72,9 +72,8 @@ petImages.forEach(image => {
     });
 });
 
-
 // Function to display the appropriate attributes for the selected pet
-function showSpecificAttribute(attributeName, attributeValue) {
+function showSpecificAttribute(attributeName) {
     const formattedAttributeName = formatAttributeName(attributeName);
 
     const attributeSpecificContainer = document.querySelector(".attribute-specific");
@@ -86,16 +85,60 @@ function showSpecificAttribute(attributeName, attributeValue) {
     `;
 }
 
+// Function to split the attribute name into individual words with capital letters
 function formatAttributeName(attributeName) {
-    // Split the string into words using the hyphen as a separator
     const words = attributeName.split('-');
-
-    // Capitalize the first letter of each word and join with spaces
     return words.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
 
 // Function to start the game with the selected pet
 function startGame(selectedPet) {
+
+    // Set up the event listeners for the gameplay buttons
+document.querySelector(".eat-btn").addEventListener("click", () => {
+    selectedPet.eat();
+})
+
+document.querySelector(".drink-btn").addEventListener("click", () => {
+    selectedPet.drink();
+})
+
+document.querySelector(".play-btn").addEventListener("click", () => {
+    selectedPet.play();
+})
+
+document.querySelector(".chuckle-btn").addEventListener("click", () => {
+    if (selectedPet instanceof Wookie) {
+        selectedPet.chuckle();
+    }
+});
+
+document.querySelector(".squawk-btn").addEventListener("click", () => {
+    if (selectedPet instanceof Porg) {
+        selectedPet.squawk();
+    }
+});
+
+document.querySelector(".drum-btn").addEventListener("click", () => {
+    if (selectedPet instanceof Ewok) {
+        selectedPet.drum();
+    }
+});
+
+document.querySelector(".roar-btn").addEventListener("click", () => {
+    if (selectedPet instanceof Rancor) {
+        selectedPet.roar();
+    }
+});
+
+document.querySelector(".restart-btn").addEventListener("click", () => {
+    clearInterval(intervalID);
+    selectedPet = null;
+    document.querySelector(".choosetext").style.display = "block"; // Show the select a pet text
+    document.querySelector(".bigsmalltxt1").style.display = "block"; // Show the instructions
+    document.querySelector(".pet-selection").style.display = "flex"; // Show the pet choices
+    document.querySelector(".game-interface").style.display = "none"; // Do not show the game play section
+});
 }
 
 class Cyberpet {
@@ -248,51 +291,4 @@ class Rancor extends Cyberpet {
         super.updateUI(); // Call the basic class updateUI method, and add the following Rancor specific update
         document.querySelector(".roarLevel").style.width = `${this.roarLevel}px`
     }
-
 }
-
-// Set up the event listeners for the gameplay buttons
-document.querySelector(".eat-btn").addEventListener("click", () => {
-    selectedPet.eat();
-})
-
-document.querySelector(".drink-btn").addEventListener("click", () => {
-    selectedPet.drink();
-})
-
-document.querySelector(".play-btn").addEventListener("click", () => {
-    selectedPet.play();
-})
-
-document.querySelector(".chuckle-btn").addEventListener("click", () => {
-    if (selectedPet instanceof Wookie) {
-        selectedPet.chuckle();
-    }
-});
-
-document.querySelector(".squawk-btn").addEventListener("click", () => {
-    if (selectedPet instanceof Porg) {
-        selectedPet.squawk();
-    }
-});
-
-document.querySelector(".drum-btn").addEventListener("click", () => {
-    if (selectedPet instanceof Ewok) {
-        selectedPet.drum();
-    }
-});
-
-document.querySelector(".roar-btn").addEventListener("click", () => {
-    if (selectedPet instanceof Rancor) {
-        selectedPet.roar();
-    }
-});
-
-document.querySelector(".restart-btn").addEventListener("click", () => {
-    clearInterval(intervalID);
-    selectedPet = null;
-    document.querySelector(".choosetext").style.display = "block"; // Show the select a pet text
-    document.querySelector(".bigsmalltxt1").style.display = "block"; // Show the instructions
-    document.querySelector(".pet-selection").style.display = "flex"; // Show the pet choices
-    document.querySelector(".game-interface").style.display = "none"; // Do not show the game play section
-});
