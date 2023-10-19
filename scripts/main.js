@@ -1,5 +1,7 @@
 const petImages = document.querySelectorAll(".pet-image");
 
+let intervalID;
+
 // Define variables for specific buttons
 const roarBtn = document.querySelector(".roar-btn");
 const squawkBtn = document.querySelector(".squawk-btn");
@@ -60,6 +62,11 @@ petImages.forEach(image => {
         document.querySelector(".pet-selection").style.display = "none";
         document.querySelector(".game-interface").style.display = "block";
 
+        intervalID = setInterval(() => {
+            selectedPet.decreaseStats();
+            selectedPet.updateUI();
+        }, 2000);
+
         // Start the game with the selected pet
         startGame(selectedPet);
     });
@@ -68,17 +75,27 @@ petImages.forEach(image => {
 
 // Function to display the appropriate attributes for the selected pet
 function showSpecificAttribute(attributeName, attributeValue) {
+    const formattedAttributeName = formatAttributeName(attributeName);
+
     const attributeSpecificContainer = document.querySelector(".attribute-specific");
     attributeSpecificContainer.innerHTML = `
-        <label>${attributeName}:</label>
+        <p>${formattedAttributeName}: </p>
         <div class="${attributeName}-bar">
             <div class="${attributeName}">${attributeValue}</div>
         </div>
     `;
 }
 
+function formatAttributeName(attributeName) {
+    // Split the string into words using the hyphen as a separator
+    const words = attributeName.split('-');
+
+    // Capitalize the first letter of each word and join with spaces
+    return words.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
 // Function to start the game with the selected pet
-function startGame(pet) {
+function startGame(selectedPet) {
 }
 
 class Cyberpet {
@@ -234,20 +251,17 @@ class Rancor extends Cyberpet {
 
 }
 
-// Set up a new pet
-const pet = new Cyberpet();
-
 // Set up the event listeners for the gameplay buttons
 document.querySelector(".eat-btn").addEventListener("click", () => {
-    pet.eat();
+    selectedPet.eat();
 })
 
 document.querySelector(".drink-btn").addEventListener("click", () => {
-    pet.drink();
+    selectedPet.drink();
 })
 
 document.querySelector(".play-btn").addEventListener("click", () => {
-    pet.play();
+    selectedPet.play();
 })
 
 document.querySelector(".chuckle-btn").addEventListener("click", () => {
@@ -274,16 +288,11 @@ document.querySelector(".roar-btn").addEventListener("click", () => {
     }
 });
 
-
-setInterval(() => {
-    pet.decreaseStats();
-    pet.updateUI();
-}, 2000);
-
 document.querySelector(".restart-btn").addEventListener("click", () => {
+    clearInterval(intervalID);
     selectedPet = null;
     document.querySelector(".choosetext").style.display = "block"; // Show the select a pet text
     document.querySelector(".bigsmalltxt1").style.display = "block"; // Show the instructions
-    document.querySelector(".pet-selection").style.display = "block"; // Show the pet choices
+    document.querySelector(".pet-selection").style.display = "flex"; // Show the pet choices
     document.querySelector(".game-interface").style.display = "none"; // Do not show the game play section
 });
