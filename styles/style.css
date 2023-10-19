@@ -8,10 +8,12 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: orange;
 }
-.photoSizer{
+
+.pet-image{
     display: flex;
     flex-direction: row;
     width: 150px;
+    cursor: pointer;
 }
 
 body {
