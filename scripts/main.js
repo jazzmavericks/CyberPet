@@ -282,9 +282,8 @@ setInterval(() => {
 
 document.querySelector(".restart-btn").addEventListener("click", () => {
     selectedPet = null;
-    // Show the pet selection images
-    petImages.forEach(image => {image.style.display = "block"; console.log("Image displayed:", image);});
     document.querySelector(".choosetext").style.display = "block"; // Show the select a pet text
     document.querySelector(".bigsmalltxt1").style.display = "block"; // Show the instructions
+    document.querySelector(".pet-selection").style.display = "block"; // Show the pet choices
     document.querySelector(".game-interface").style.display = "none"; // Do not show the game play section
 });
