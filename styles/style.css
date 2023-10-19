@@ -1,18 +1,37 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,600;1,600&display=swap');
+
+
 .bigtext1{
-    font-size: xx-large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    font-family: 'Kanit', sans-serif;
     color: orange;
+    text-align: center;
+    margin: 10px;
 }
+
+.choosetext {
+    font-size: 40px;
+    font-family: 'Kanit', sans-serif;
+    color: orange;
+    text-align: center;
+    margin: 10px;
+}
+
 .bigsmalltxt1{
     font-size: x-large;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Kanit', sans-serif;
     color: orange;
-}
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    }
 
 .pet-image{
     display: flex;
     flex-direction: row;
-    width: 150px;
+    width: 200px;
+    height: 200px;
     cursor: pointer;
 }
 
@@ -61,10 +80,10 @@ body {
 .hunger-bar,
 .thirst-bar,
 .happiness-bar,
-.squakLevel-bar,
+.squawkLevel-bar,
 .roarLevel-bar,
 .chuckleLevel-bar,
-.cuddlyLevel-bar {
+.drumLevel-bar {
     height: 20px;
     max-width: 300px;
     background-color: #ccc;
@@ -73,17 +92,27 @@ body {
 .hunger,
 .thirst,
 .happiness,
-.squakLevel,
+.squawkLevel,
 .roarLevel,
 .chuckleLevel,
-.cuddlyLevel {
+.drumLevel {
     height: 20px;
     max-width: 300px;
     background-color: green;
 }
 
 .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     margin-top: 20px;
+}
+
+.basic-actions,
+.pet-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 button {
@@ -97,4 +126,17 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.restart-btn {
+    background-color: #FF4136;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.restart-btn:hover {
+    background-color: #D0021B;
 }
