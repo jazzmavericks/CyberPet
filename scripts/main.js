@@ -1,5 +1,6 @@
 const petImages = document.querySelectorAll(".pet-image");
 
+// Define variablefor the interval
 let intervalID;
 
 // Define variables for specific buttons
@@ -8,12 +9,13 @@ const squawkBtn = document.querySelector(".squawk-btn");
 const drumBtn = document.querySelector(".drum-btn");
 const chuckleBtn = document.querySelector(".chuckle-btn");
 
+// Listen for which image is clicked on and create the selected pet instance based on the chosen type
 petImages.forEach(image => {    
     image.addEventListener("click", () => {        
     const petType = image.getAttribute("data-pet-type");        
     let selectedPet;
-
-        // Create the selected pet instance based on the chosen type
+ 
+    // Create the selected pet instance based on the chosen type
         if (petType === "Wookie") {
             selectedPet = new Wookie();
             showSpecificAttribute("chuckleLevel", selectedPet.chuckleLevel);
@@ -56,6 +58,8 @@ petImages.forEach(image => {
             return;
         }
 
+        console.log(selectedPet);
+
         // Hide the pet selection menu and display the game interface
         document.querySelector(".choosetext").style.display = "none";
         document.querySelector(".bigsmalltxt1").style.display = "none";
@@ -74,73 +78,66 @@ petImages.forEach(image => {
 
 // Function to display the appropriate attributes for the selected pet
 function showSpecificAttribute(attributeName) {
-    const formattedAttributeName = formatAttributeName(attributeName);
-
     const attributeSpecificContainer = document.querySelector(".attribute-specific");
     attributeSpecificContainer.innerHTML = `
-        <p>${formattedAttributeName}:</p>
+        <p>${attributeName}:</p>
         <div class="${attributeName}-bar">
             <div class="${attributeName}"></div>
         </div>
     `;
 }
 
-// Function to split the attribute name into individual words with capital letters
-function formatAttributeName(attributeName) {
-    const words = attributeName.split('-');
-    return words.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-}
-
 // Function to start the game with the selected pet
 function startGame(selectedPet) {
 
     // Set up the event listeners for the gameplay buttons
-document.querySelector(".eat-btn").addEventListener("click", () => {
-    selectedPet.eat();
-})
+    document.querySelector(".eat-btn").addEventListener("click", () => {
+        selectedPet.eat();
+    })
 
-document.querySelector(".drink-btn").addEventListener("click", () => {
-    selectedPet.drink();
-})
+    document.querySelector(".drink-btn").addEventListener("click", () => {
+        selectedPet.drink();
+    })
 
-document.querySelector(".play-btn").addEventListener("click", () => {
-    selectedPet.play();
-})
+    document.querySelector(".play-btn").addEventListener("click", () => {
+        selectedPet.play();
+    })
 
-document.querySelector(".chuckle-btn").addEventListener("click", () => {
-    if (selectedPet instanceof Wookie) {
-        selectedPet.chuckle();
-    }
-});
+    document.querySelector(".chuckle-btn").addEventListener("click", () => {
+        if (selectedPet instanceof Wookie) {
+            selectedPet.chuckle();
+        }
+    });
 
-document.querySelector(".squawk-btn").addEventListener("click", () => {
-    if (selectedPet instanceof Porg) {
-        selectedPet.squawk();
-    }
-});
+    document.querySelector(".squawk-btn").addEventListener("click", () => {
+        if (selectedPet instanceof Porg) {
+            selectedPet.squawk();
+        }
+    });
 
-document.querySelector(".drum-btn").addEventListener("click", () => {
-    if (selectedPet instanceof Ewok) {
-        selectedPet.drum();
-    }
-});
+    document.querySelector(".drum-btn").addEventListener("click", () => {
+        if (selectedPet instanceof Ewok) {
+            selectedPet.drum();
+        }
+    });
 
-document.querySelector(".roar-btn").addEventListener("click", () => {
-    if (selectedPet instanceof Rancor) {
-        selectedPet.roar();
-    }
-});
+    document.querySelector(".roar-btn").addEventListener("click", () => {
+        if (selectedPet instanceof Rancor) {
+            selectedPet.roar();
+        }
+    });
 
-document.querySelector(".restart-btn").addEventListener("click", () => {
-    clearInterval(intervalID);
-    selectedPet = null;
-    document.querySelector(".choosetext").style.display = "block"; // Show the select a pet text
-    document.querySelector(".bigsmalltxt1").style.display = "block"; // Show the instructions
-    document.querySelector(".pet-selection").style.display = "flex"; // Show the pet choices
-    document.querySelector(".game-interface").style.display = "none"; // Do not show the game play section
-});
+    document.querySelector(".restart-btn").addEventListener("click", () => {
+        clearInterval(intervalID);
+        selectedPet = null;
+        document.querySelector(".choosetext").style.display = "block"; // Show the select a pet text
+        document.querySelector(".bigsmalltxt1").style.display = "block"; // Show the instructions
+        document.querySelector(".pet-selection").style.display = "flex"; // Show the pet choices
+        document.querySelector(".game-interface").style.display = "none"; // Do not show the game play section
+    });
 }
 
+// Set up basic attributes for all the pets
 class Cyberpet {
     constructor() {
         this.happiness = 150;
@@ -177,6 +174,7 @@ class Cyberpet {
     }
 };
 
+// Set up specific attributes for the Wookie
 class Wookie extends Cyberpet {
     constructor() {
         super(); // Call the constructor of the basic class (hunger, happiness, thirst), and add the following Wookie specific attribute
@@ -206,6 +204,7 @@ class Wookie extends Cyberpet {
     }
 }
 
+// Set up specific attributes for the Porg
 class Porg extends Cyberpet {
     constructor() {
         super(); // Call the constructor of the basic class (hunger, happiness, thirst), and add the following Porg specific attribute
@@ -235,6 +234,7 @@ class Porg extends Cyberpet {
     }
 }
 
+// Set up specific attributes for the Ewok
 class Ewok extends Cyberpet {
     constructor() {
         super(); // Call the constructor of the basic class (hunger, happiness, thirst), and add the following Ewok specific attribute
@@ -264,6 +264,7 @@ class Ewok extends Cyberpet {
     }
 }
 
+// Set up specific attributes for the Rancor
 class Rancor extends Cyberpet {
     constructor() {
         super(); // Call the constructor of the basic class (hunger, happiness, thirst), and add the following Rancor specific attribute
