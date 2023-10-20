@@ -168,9 +168,9 @@ class Cyberpet {
         document.querySelector(".happiness").style.width = `${this.happiness}px`
     }
     decreaseStats() {
-        this.hunger += 6;
-        this.thirst += 6;
-        this.happiness -= 6;
+        this.hunger += 20;
+        this.thirst += 20;
+        this.happiness -= 20;
     }
     eat() {
         if (this.hunger > 0){
@@ -203,16 +203,17 @@ class Wookie extends Cyberpet {
     chuckle() {
         if (this.chuckleLevel < 300) {
             this.chuckleLevel += 30;
+            this.hunger += 20;
             this.updateUI();
         }
     }
 
     // Wookie specific overrides of basic attributes and additional ones
     decreaseStats() {
-        this.hunger += 3;
-        this.thirst += 3;
-        this.happiness -= 6;
-        this.chuckleLevel -= 3;
+        this.hunger += 30;
+        this.thirst += 30;
+        this.happiness -= 40;
+        this.chuckleLevel -= 26;
     }
 
     // Override the updateUI method to display the chuckle level
@@ -233,16 +234,17 @@ class Porg extends Cyberpet {
     squawk() {
         if (this.squawkLevel < 300) {
             this.squawkLevel += 30;
+            this.thirst += 20;
             this.updateUI();
         }
     }
 
     // Porg specific overrides of basic attributes and additional ones
     decreaseStats() {
-        this.hunger += 3;
-        this.thirst += 3;
-        this.happiness -= 6;
-        this.squawkLevel -= 3;
+        this.hunger += 20;
+        this.thirst += 15;
+        this.happiness -= 50;
+        this.squawkLevel -= 40;
     }
 
     // Override the updateUI method to display the squawk level
@@ -263,16 +265,17 @@ class Ewok extends Cyberpet {
     drum() {
         if (this.drumLevel < 300) {
             this.drumLevel += 30;
+            this.thirst += 20;
             this.updateUI();
         }
     }
 
     // Ewok specific overrides of basic attributes and additional ones
     decreaseStats() {
-        this.hunger += 3;
-        this.thirst += 3;
-        this.happiness -= 6;
-        this.drumLevel -= 3;
+        this.hunger += 20;
+        this.thirst += 35;
+        this.happiness -= 40;
+        this.drumLevel -= 25;
     }
 
     // Override the updateUI method to display the drum level
@@ -293,16 +296,17 @@ class Rancor extends Cyberpet {
     roar() {
         if (this.roarLevel < 300) {
             this.roarLevel += 30;
+            this.hunger += 30;
             this.updateUI();
         }
     }
 
     // Rancor specific overrides of basic attributes and additional ones
     decreaseStats() {
-        this.hunger += 3;
-        this.thirst += 3;
-        this.happiness -= 6;
-        this.roarLevel -= 3;
+        this.hunger += 40;
+        this.thirst += 15;
+        this.happiness -= 25;
+        this.roarLevel -= 40;
     }
 
     // Override the updateUI method to display the roar level
