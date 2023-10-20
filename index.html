@@ -7,52 +7,80 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <!-- choose your pet section -->
+<!-- choose your pet section -->
+<section>
     <div>
         <h1 class="bigtext1">STAR WARS: CREATURE CANTINA</h1>
         <h2 class="choosetext">CHOOSE YOUR PET!</h2>
-        <h3 class="bigsmalltxt1">Make sure to nurture your pet and fulfill its needs or your pet will die!</h3>
+        <h3 class="bigsmalltxt1">Make sure to nurture your pet and fufil its needs or your pet will die!</h3>
         <div class="pet-selection">
             <img class="pet-image" data-pet-type="Wookie" src="./images/wookie.webp" alt="wookie image">
             <img class="pet-image" data-pet-type="Porg" src="./images/Porg-10.webp" alt="porg image">
             <img class="pet-image" data-pet-type="Ewok" src="./images/ewok.jpeg" alt="ewok image">
             <img class="pet-image" data-pet-type="Rancor" src="./images/rancor.webp" alt="rancor image">
-        </div>
+    </div>
 
-        <!-- Switches to game section -->
-        <div class="game-interface" style="display: none;">
-            <div class="pet-container">
-                <div class="pet">
-                    <!-- Pet image goes here -->
+<!-- Switches to game section -->
+    <div class="game-interface" style="display: none;">
+        <div class="pet-container">
+            <div class="pet">
+                <!-- Pet image goes here -->
+            </div>
+            <div class="status">
+                <div class="attribute">
+                    <p>Hunger: </p>
+                    <div class="hunger-bar">
+                        <div class="hunger"></div>
+                    </div>
                 </div>
-                <div class="status">
-                    <div class="attribute">
-                        <p>Hunger: </p>
-                        <div class="hunger-bar">
-                            <div class="hunger"></div>
-                        </div>
+                <div class="attribute">
+                    <p>Thirst: </p>
+                    <div class="thirst-bar">
+                        <div class="thirst"></div>
                     </div>
-                    <!-- ... Other attribute sections ... -->
                 </div>
-                <div class="actions">
-                    <div class="basic-actions">
-                        <button class="eat-btn">Eat</button>
-                        <button class="drink-btn">Drink</button>
-                        <button class="play-btn">Play</button>
+                <div class="attribute">
+                    <p>Happiness: </p>
+                    <div class="happiness-bar">
+                        <div class="happiness"></div>
                     </div>
-                    <div class="pet-actions">
-                        <button class="chuckle-btn">Chuckle</button>
-                        <button class="squawk-btn">Squawk</button>
-                        <button class="drum-btn">Drum</button>
-                        <button class="roar-btn">Roar</button>
+                </div>
+                <div class="attribute-specific">
+                    <p>Squawk Level: </p>
+                    <div class="squawkLevel-bar">
+                        <div class="squawkLevel"></div>
                     </div>
-                    <div class="basic-actions">
-                        <button class="restart-btn">Restart</button>
+                    <p>Drum Level: </p>
+                    <div class="drumLevel-bar">
+                        <div class="drumLevel"></div>
                     </div>
+                    <p>Roar Level: </p>
+                    <div class="roarLevel-bar">
+                        <div class="roarLevel"></div>
+                    </div>
+                    <p>Chuckle Level: </p>
+                    <div class="chuckleLevel-bar">
+                        <div class="chuckleLevel"></div>
+                    </div>
+                </div>       
+            </div>
+            <div class="actions">
+                <div class="basic-actions">
+                    <button class="eat-btn">Eat</button>
+                    <button class="drink-btn">Drink</button>
+                    <button class="play-btn">Play</button>
+                </div>
+                <div class="pet-actions">
+                    <button class="chuckle-btn">Chuckle</button>
+                    <button class="squawk-btn">Squawk</button>
+                    <button class="drum-btn">Drum</button>
+                    <button class="roar-btn">Roar</button>
+                </div>
+                <div class="basic-actions">
+                    <button class="restart-btn">Restart</button>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="scripts/main.js"></script>
-</body>
-</html>
+        <script src="scripts/main.js"></script>
+    </body>
+    </html>
