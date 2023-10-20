@@ -156,7 +156,7 @@ function checkGameOver() {
         document.querySelector(".bigsmalltxt1").style.display = "block"; // Show the instructions
         document.querySelector(".pet-selection").style.display = "flex"; // Show the pet choices
         document.querySelector(".game-interface").style.display = "none"; // Do not show the game play section
-        document.querySelector(".restart-btn-new-game").style.display = "block"; // Show the restart game button
+        document.querySelector(".restart-btn-new-game").style.display = "flex"; // Show the restart game button
         }
     }
 
