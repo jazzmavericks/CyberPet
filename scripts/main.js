@@ -80,7 +80,9 @@ petImages.forEach(image => {
 function showSpecificAttribute(attributeName) {
     const attributeSpecificContainer = document.querySelector(".attribute-specific");
     attributeSpecificContainer.innerHTML = `
-        <p>${attributeName}:</p>
+        <div class="stat">
+            <p>${attributeName}:</p>
+        </div>
         <div class="${attributeName}-bar">
             <div class="${attributeName}"></div>
         </div>

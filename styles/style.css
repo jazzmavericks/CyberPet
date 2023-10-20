@@ -57,6 +57,11 @@ body {
     margin: 20px;
 }
 
+.stat {
+    width: 100px;
+    text-align: left;
+}
+
 .attribute {
     display: flex;
     justify-content:flex-start;
