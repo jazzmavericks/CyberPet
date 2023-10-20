@@ -54,7 +54,15 @@ body {
     justify-content: space-between;
 }
 
+.gameplayImage {
+    width: 400px;
+    height: 400px;
+}
+
 .pet-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
     text-align: center;
 }
 
@@ -148,10 +156,18 @@ button:hover {
     margin: 5px;
 }
 
-.restart-btn:hover {
-    background-color: #D0021B;
+.game-over p {
+    font-size: 25px;
+    font-family: 'Kanit', sans-serif;
+    color: rgb(254, 26, 9);
+    text-align: center;
+    margin: 30px;
 }
 
-.restart-btn-new-game:hover {
-    background-color: #D0021B;
+.statsAndControls {
+    width: 50%;
+}
+
+.graphics {
+    width: 50%;
 }

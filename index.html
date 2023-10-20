@@ -23,75 +23,79 @@
 <!-- Switches to game section -->
     <div class="game-interface" style="display: none;">
         <div class="pet-container">
-            <div class="pet">
-                <!-- Pet image goes here -->
+            <div class="statsAndControls">
+                <div class="status">
+                    <div class="attribute">
+                        <div class="stat">
+                            <p>Hunger: </p>
+                        </div>
+                        <div class="hunger-bar">
+                            <div class="hunger"></div>
+                        </div>
+                    </div>
+                    <div class="attribute">
+                        <div class="stat">
+                            <p>Thirst: </p>
+                        </div>
+                        <div class="thirst-bar">
+                            <div class="thirst"></div>
+                        </div>
+                    </div>
+                    <div class="attribute">
+                        <div class="stat">
+                            <p>Happiness: </p>
+                        </div>
+                        <div class="happiness-bar">
+                            <div class="happiness"></div>
+                        </div>
+                    </div>
+                    <div class="attribute-specific">
+                        <p>Squawk Level: </p>
+                        <div class="squawkLevel-bar">
+                            <div class="squawkLevel"></div>
+                        </div>
+                        <p>Drum Level: </p>
+                        <div class="drumLevel-bar">
+                            <div class="drumLevel"></div>
+                        </div>
+                        <p>Roar Level: </p>
+                        <div class="roarLevel-bar">
+                            <div class="roarLevel"></div>
+                        </div>
+                        <p>Chuckle Level: </p>
+                        <div class="chuckleLevel-bar">
+                            <div class="chuckleLevel"></div>
+                        </div>
+                    </div>       
+                </div>
+                <div class="actions">
+                    <div class="basic-actions">
+                        <button class="eat-btn">Eat</button>
+                        <button class="drink-btn">Drink</button>
+                        <button class="play-btn">Play</button>
+                    </div>
+                    <div class="pet-actions">
+                        <button class="chuckle-btn">Chuckle</button>
+                        <button class="squawk-btn">Squawk</button>
+                        <button class="drum-btn">Drum</button>
+                        <button class="roar-btn">Roar</button>
+                    </div>
+                    <div class="basic-actions">
+                        <button class="restart-btn">Restart</button>
+                    </div>
+                    <div class="petImageContainer">
+                        <img src="">
+                    </div>
+                </div>
+                <div class="game-over" style="display: none;">
+                    <p>Game over! Your pet didn't make it. Please restart.</p>
+                </div>
             </div>
-            <div class="status">
-                <div class="attribute">
-                    <div class="stat">
-                        <p>Hunger: </p>
-                    </div>
-                    <div class="hunger-bar">
-                        <div class="hunger"></div>
-                    </div>
-                </div>
-                <div class="attribute">
-                    <div class="stat">
-                        <p>Thirst: </p>
-                    </div>
-                    <div class="thirst-bar">
-                        <div class="thirst"></div>
-                    </div>
-                </div>
-                <div class="attribute">
-                    <div class="stat">
-                        <p>Happiness: </p>
-                    </div>
-                    <div class="happiness-bar">
-                        <div class="happiness"></div>
-                    </div>
-                </div>
-                <div class="attribute-specific">
-                    <p>Squawk Level: </p>
-                    <div class="squawkLevel-bar">
-                        <div class="squawkLevel"></div>
-                    </div>
-                    <p>Drum Level: </p>
-                    <div class="drumLevel-bar">
-                        <div class="drumLevel"></div>
-                    </div>
-                    <p>Roar Level: </p>
-                    <div class="roarLevel-bar">
-                        <div class="roarLevel"></div>
-                    </div>
-                    <p>Chuckle Level: </p>
-                    <div class="chuckleLevel-bar">
-                        <div class="chuckleLevel"></div>
-                    </div>
-                </div>       
-            </div>
-            <div class="actions">
-                <div class="basic-actions">
-                    <button class="eat-btn">Eat</button>
-                    <button class="drink-btn">Drink</button>
-                    <button class="play-btn">Play</button>
-                </div>
-                <div class="pet-actions">
-                    <button class="chuckle-btn">Chuckle</button>
-                    <button class="squawk-btn">Squawk</button>
-                    <button class="drum-btn">Drum</button>
-                    <button class="roar-btn">Roar</button>
-                </div>
-                <div class="basic-actions">
-                    <button class="restart-btn">Restart</button>
-                </div>
-                <div class="petImageContainer">
-                    <img src="">
+            <div class="graphics">
+                <div class="pet">
+                    <img src ="./images/ewok.jpeg" class = "gameplayImage" alt="" />
                 </div>
             </div>
-        </div>
-        <div class="game-over" style="display: none;">
-            <p>Game over! Your pet didn't make it. Please restart.</p>
         </div>
         <script src="scripts/main.js"></script>
     </body>
