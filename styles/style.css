@@ -133,7 +133,8 @@ button:hover {
     background-color: #0056b3;
 }
 
-.restart-btn {
+.restart-btn,
+.restart-btn-new-game {
     background-color: #FF4136;
     color: white;
     padding: 10px 20px;
@@ -143,5 +144,9 @@ button:hover {
 }
 
 .restart-btn:hover {
+    background-color: #D0021B;
+}
+
+.restart-btn-new-game:hover {
     background-color: #D0021B;
 }

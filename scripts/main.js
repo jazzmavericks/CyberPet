@@ -69,6 +69,7 @@ petImages.forEach(image => {
         intervalID = setInterval(() => {
             selectedPet.decreaseStats();
             selectedPet.updateUI();
+            checkGameOver();
         }, 2000);
 
         // Start the game with the selected pet
@@ -95,37 +96,44 @@ function startGame(selectedPet) {
     // Set up the event listeners for the gameplay buttons
     document.querySelector(".eat-btn").addEventListener("click", () => {
         selectedPet.eat();
+        checkGameOver();
     })
 
     document.querySelector(".drink-btn").addEventListener("click", () => {
         selectedPet.drink();
+        checkGameOver();
     })
 
     document.querySelector(".play-btn").addEventListener("click", () => {
         selectedPet.play();
+        checkGameOver();
     })
 
     document.querySelector(".chuckle-btn").addEventListener("click", () => {
         if (selectedPet instanceof Wookie) {
             selectedPet.chuckle();
+            checkGameOver();
         }
     });
 
     document.querySelector(".squawk-btn").addEventListener("click", () => {
         if (selectedPet instanceof Porg) {
             selectedPet.squawk();
+            checkGameOver();
         }
     });
 
     document.querySelector(".drum-btn").addEventListener("click", () => {
         if (selectedPet instanceof Ewok) {
             selectedPet.drum();
+            checkGameOver();
         }
     });
 
     document.querySelector(".roar-btn").addEventListener("click", () => {
         if (selectedPet instanceof Rancor) {
             selectedPet.roar();
+            checkGameOver();
         }
     });
 
@@ -138,6 +146,19 @@ function startGame(selectedPet) {
         document.querySelector(".game-interface").style.display = "none"; // Do not show the game play section
     });
 }
+
+// Function to check if the pet has died, and output an alert stating this has happened
+function checkGameOver() {
+    if (selectedPet.hunger >= 300 || selectedPet.thirst >= 300 || selectedPet.happiness <= 0 || (selectedPet instanceof Wookie && selectedPet.chuckleLevel <= 0) || (selectedPet instanceof Porg && selectedPet.squawkLevel <= 0) || (selectedPet instanceof Ewok && selectedPet.drumLevel <= 0) || (selectedPet instanceof Rancor && selectedPet.roarLevel <= 0)) {
+        clearInterval(intervalID); // Stop the interval
+        document.querySelector(".game-over").style.display = "block"; // Show the game over message
+        document.querySelector(".choosetext").style.display = "block"; // Show the select a pet text
+        document.querySelector(".bigsmalltxt1").style.display = "block"; // Show the instructions
+        document.querySelector(".pet-selection").style.display = "flex"; // Show the pet choices
+        document.querySelector(".game-interface").style.display = "none"; // Do not show the game play section
+        document.querySelector(".restart-btn-new-game").style.display = "block"; // Show the restart game button
+        }
+    }
 
 // Set up basic attributes for all the pets
 class Cyberpet {
