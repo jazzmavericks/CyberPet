@@ -93,6 +93,9 @@ function showSpecificAttribute(attributeName) {
 // Function to start the game with the selected pet
 function startGame(selectedPet) {
 
+    const petAudio = document.getElementById("petAudio");
+    petAudio.play();
+
     // Set up the event listeners for the gameplay buttons
     document.querySelector(".eat-btn").addEventListener("click", () => {
         selectedPet.eat();
@@ -138,6 +141,9 @@ function startGame(selectedPet) {
         document.querySelector(".bigsmalltxt1").style.display = "block"; // Show the instructions
         document.querySelector(".pet-selection").style.display = "flex"; // Show the pet choices
         document.querySelector(".game-interface").style.display = "none"; // Do not show the game play section
+
+        petAudio.pause();
+        petAudio.currentTime = 0;
     });
 }
 
