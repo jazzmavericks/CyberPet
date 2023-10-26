@@ -93,6 +93,10 @@ function showSpecificAttribute(attributeName) {
 // Function to start the game with the selected pet
 function startGame(selectedPet) {
 
+    const petImage = document.querySelector(".gameplayImage");
+    const petImageSrc = `./images/${selectedPet.constructor.name.toLowerCase()}.gif`; // Assuming your image names match the class names
+    petImage.src = petImageSrc;
+
     const petAudio = document.getElementById("petAudio");
     petAudio.play();
 

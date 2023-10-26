@@ -66,13 +66,56 @@ body {
     text-align: center;
 }
 
+.statsAndControls {
+    width: 500px;
+}
+
+.graphics {
+    width: 500px;
+    height: 400px;
+    margin-left:50px;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 10px;
+    border-color: white;
+    background-color: black;
+}
+
 .status {
-    margin: 20px;
+    margin: 35px 20px 20px 20px;
+    padding:20px;
+    border-style: solid;
+    border-radius: 15px 15px 0px 0px;
+    border-width: 10px;
+    border-color: white;
+    background-color: black;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+    padding:20px;
+    border-style: solid;
+    border-radius: 15px 15px 0px 0px;
+    border-width: 10px;
+    border-color: white;
+    background-color: rgb(84, 84, 84);
+}
+
+.basic-actions,
+.pet-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .stat {
     width: 100px;
     text-align: left;
+    
 }
 
 .attribute {
@@ -114,23 +157,20 @@ body {
 .roarLevel,
 .chuckleLevel,
 .drumLevel {
-    height: 20px;
+    margin-top: 5px;
+    border-radius: 0px 20px 20px 0px;
+    height: 10px;
     max-width: 300px;
-    background-color: green;
-}
-
-.actions {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.basic-actions,
-.pet-actions {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    background-color: rgb(4, 150, 4);
+    box-shadow:
+    inset 0 0 50px #02f748,      /* inner white */
+    inset 20px 0 80px rgb(7, 222, 75),   /* inner left magenta short */
+    inset -20px 0 80px #0ff,  /* inner right cyan short */
+    inset 20px 0 300px rgb(16, 213, 122),  /* inner left magenta broad */
+    inset -20px 0 300px #0ff, /* inner right cyan broad */
+    0 0 50px #fff,            /* outer white */
+    -10px 0 80px rgb(122, 226, 155),        /* outer left magenta */
+    10px 0 80px #0ff;         /* outer right cyan */
 }
 
 button {
@@ -138,12 +178,14 @@ button {
     color: white;
     padding: 10px 20px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     margin: 5px;
 }
 
 button:hover {
     background-color: #0056b3;
+    cursor: pointer;
 }
 
 .restart-btn {
@@ -165,12 +207,4 @@ button:hover {
     color: rgb(254, 26, 9);
     text-align: center;
     margin: 30px;
-}
-
-.statsAndControls {
-    width: 50%;
-}
-
-.graphics {
-    width: 50%;
 }
